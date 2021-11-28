@@ -7,6 +7,10 @@ library("HSAUR")
 library("ggsci")
 library("rsconnect")
 
+rsconnect::setAccountInfo(name='kpham62',
+                          token='48BF7D985510FE7AC802E53CCB4E8C82',
+                          secret='a68zQF+KxCOi9ZCi65OuWIEgcV7QPiYv7STNaB4L')
+
 # Store into ui
 ui <- navbarPage(
   
@@ -41,6 +45,7 @@ ui <- navbarPage(
         its insignificant emissions figures compared to more populated continents."),
         br(),
         p(strong("\nSummary Analysis")),
+        br("My 5 calculated values:"),
         br("1. Continent with the highest fossil fuel CO2 emissions total from 1980-2020 (with value):
         Asia, 2019, 20608592701"),
         br("2. Continent with the lowest fossil fuel CO2 emissions total from 1980-2020 (with value):
@@ -49,7 +54,7 @@ ui <- navbarPage(
         World, 2019, 36702502903"),
         br("4. Continent with the most CO2 emissions increase from 1980-2020 with their average annual change:
         Asia, Total = +15916153596, Avg = +397903840"),
-        br("5. Returns data of the continent with the least CO2 emissions increase from 1980-2020 with their average annual change:
+        br("5. Continent with the least CO2 emissions increase from 1980-2020 with their average annual change:
         Europe, Total = -2789666941, Avg = -69741674"),
         br("Conclusions that can be made from my initial analysis is that from 1980-2020, Asia is consistently
         the highest fossil fuel polluter. They hold the highest fossil fuel CO2 emissions total in 2019 as 
@@ -82,7 +87,8 @@ ui <- navbarPage(
                    click = "plot_click",
                    dblclick = dblclickOpts(
                      id = "plot_dblclick"
-                   ),    
+                   ),
+                     
         )
       )
     ),
